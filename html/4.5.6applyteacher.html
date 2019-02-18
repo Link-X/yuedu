@@ -1,0 +1,396 @@
+<html><head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="full-screen" content="yes">
+		<meta name="browsermode" content="application">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="x5-page-mode" content="app">
+		<title>
+							申请讲师 - 阅读app
+		</title>
+		<script src="../style/jquery.min.js"></script>
+		<script src="../style/swiper.3.1.7.min.js"></script>
+		<script src="../style/common.js"></script>
+		<link rel="stylesheet" href="../style/weui.min.css">
+		<link rel="stylesheet" href="../style/font-awesome.min.css">
+		<link rel="stylesheet" href="../style/index.css">
+
+<script src="../style/jweixin-1.3.2.js"></script>
+<script type="text/javascript">
+	window.sysinfo = window.sysinfo || {"uniacid":2,"acid":"2","siteroot":"http:\/\/shop.itischinese.com\/","siteurl":"http:\/\/shop.itischinese.com\/app\/index.php?i=2&c=entry&do=applyteacher&m=fy_lessonv2","attachurl":"http:\/\/shop.itischinese.com\/attachment\/","cookie":{"pre":"6114_"},"openid":"om1HxvvE-OW8NE4ZaVUpQn-MGqWI","MODULE_URL":"http:\/\/shop.itischinese.com\/addons\/fy_lessonv2\/"} || {};
+
+	// jssdk config 对象
+	jssdkconfig = {"appId":"wx4a922ba228b745ac","nonceStr":"FXdkc6FSS645s6Cf","timestamp":"1547891640","signature":"8b901fb8602df5b63ebca0b8220087a1e335b27a"} || {};
+
+	// 是否启用调试
+	jssdkconfig.debug = false;
+
+	jssdkconfig.jsApiList = [
+		'checkJsApi',
+		'onMenuShareTimeline',
+		'onMenuShareAppMessage',
+		'onMenuShareQQ',
+		'onMenuShareWeibo',
+		'hideMenuItems',
+		'showMenuItems',
+		'hideAllNonBaseMenuItem',
+		'showAllNonBaseMenuItem',
+		'translateVoice',
+		'startRecord',
+		'stopRecord',
+		'onRecordEnd',
+		'playVoice',
+		'pauseVoice',
+		'stopVoice',
+		'uploadVoice',
+		'downloadVoice',
+		'chooseImage',
+		'previewImage',
+		'uploadImage',
+		'downloadImage',
+		'getNetworkType',
+		'openLocation',
+		'getLocation',
+		'hideOptionMenu',
+		'showOptionMenu',
+		'closeWindow',
+		'scanQRCode',
+		'chooseWXPay',
+		'openProductSpecificView',
+		'addCard',
+		'chooseCard',
+		'openCard'
+	];
+
+	wx.config(jssdkconfig);
+
+</script>		<script type="text/javascript">
+		wx.ready(function(){
+			var shareData = {
+				title: "申请讲师",
+				desc: "",
+				link: "http://shop.itischinese.com/app/index.php?i=2&c=entry&do=applyteacher&m=fy_lessonv2&uid=3",
+				imgUrl: "http://shop.itischinese.com/attachment/",
+				trigger: function (res) {},
+				complete: function (res) {},
+				success: function (res) {},
+				cancel: function (res) {},
+				fail: function (res) {}
+			};
+			wx.onMenuShareTimeline(shareData);
+			wx.onMenuShareAppMessage(shareData);
+			wx.onMenuShareQQ(shareData);
+			wx.onMenuShareWeibo(shareData);
+			wx.onMenuShareQZone(shareData);
+		});
+		</script>
+	<script src="../style/iscroll-zoom.js" type="text/javascript"></script></head>
+	<body>
+		<div class="tabbar tabbar_wrap page_wrap">
+			<div class="weui_tab">
+<link href="../style/applyteacher.css" rel="stylesheet">
+<style type="text/css">
+.tabbar_wrap {
+	-webkit-overflow-scrolling: unset;
+}
+</style>
+<div class="header-2 cbox">
+	<a href="javascript:history.go(-1);" class="ico go-back"></a>
+	<div class="flex title">申请讲师</div>
+</div>
+
+<form enctype="multipart/form-data" method="post" action="./index.php?i=2&amp;c=entry&amp;op=postteacher&amp;do=applyteacher&amp;m=fy_lessonv2">
+	<article class="info">
+		<div class="welcome">
+							<p>尊敬的<span class="title">袁波</span>:</p>
+						<p class="descript">欢迎申请成为讲师，认真填写以下各项信息有利于审核通过哦~</p>
+		</div>
+
+		<ul>
+			<li>
+				<div class="left">
+					讲师名称：
+				</div>
+				<div class="right">
+					<input type="text" name="teacher" id="teacher" value="">
+				</div>
+				<div class="clear"></div>
+			</li>
+			<li>
+				<div class="left">
+					讲师QQ：
+				</div>
+				<div class="right">
+					<input type="text" name="qq" id="qq" value="">
+				</div>
+				<div class="clear"></div>
+			</li>
+			<li>
+				<div class="left">
+					QQ群：
+				</div>
+				<div class="right">
+					<input type="text" name="qqgroup" id="qqgroup" value="">
+				</div>
+				<div class="clear"></div>
+			</li>
+			<li>
+				<div class="left">
+					讲师介绍：
+				</div>
+				<div class="right">
+					<textarea name="teacherdes" id="teacherdes"></textarea>
+				</div>
+				<div class="clear"></div>
+			</li>
+		</ul>
+	</article>
+
+	<section class="logo-license">
+		<div class="half">
+			<a class="logo" id="logox">
+				<img id="teacherphoto_show" src="http://shop.itischinese.com/addons/fy_lessonv2/template/mobile/images/applyteacher-avatar.png">
+			</a>
+			<p>上传讲师头像</p>
+			<input type="hidden" name="teacherphoto" id="teacherphoto_hide" value="">
+		</div>
+		<div class="half">
+			<div class="uploader blue">
+				<input type="text" class="filename" readonly="" value="微信二维码">
+				<a class="license">
+					<img id="qrcode_url_show" src="http://shop.itischinese.com/addons/fy_lessonv2/template/mobile/images/applyteacher-qrcode.png">
+				</a>
+				<input id="uploadFile2" name="uploadFile" class="file-3" type="file" size="30" onchange="uploadImage(2);" accept="image/*">
+				<input type="hidden" name="weixin_qrcode" id="qrcode_url_hide" value="">
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div class="help-block">
+			头像和二维码建议尺寸200*200像素，格式为jpg		</div>
+	</section>
+
+	<article class="htmleaf-container">
+		<div id="clipArea" style="user-select: none; overflow: hidden; position: relative;"><div class="photo-clip-view" style="position: absolute; left: 50%; top: 50%; width: 199px; height: 199px; margin-left: -99.5px; margin-top: -99.5px;"><div class="photo-clip-moveLayer"><div class="photo-clip-rotateLayer"></div></div></div><div class="photo-clip-mask" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; pointer-events: none;"><div class="photo-clip-mask-left" style="position: absolute; left: 0px; right: 50%; top: 50%; bottom: 50%; width: auto; height: 199px; margin-right: 99.5px; margin-top: -99.5px; margin-bottom: -99.5px; background-color: rgba(0, 0, 0, 0.5);"></div><div class="photo-clip-mask-right" style="position: absolute; left: 50%; right: 0px; top: 50%; bottom: 50%; margin-left: 99.5px; margin-top: -99.5px; margin-bottom: -99.5px; background-color: rgba(0, 0, 0, 0.5);"></div><div class="photo-clip-mask-top" style="position: absolute; left: 0px; right: 0px; top: 0px; bottom: 50%; margin-bottom: 99.5px; background-color: rgba(0, 0, 0, 0.5);"></div><div class="photo-clip-mask-bottom" style="position: absolute; left: 0px; right: 0px; top: 50%; bottom: 0px; margin-top: 99.5px; background-color: rgba(0, 0, 0, 0.5);"></div><div class="photo-clip-area" style="border: 1px dashed rgb(221, 221, 221); position: absolute; left: 50%; top: 50%; width: 199px; height: 199px; margin-left: -100.5px; margin-top: -100.5px;"></div></div></div>
+		<div class="foot-use">
+			<div class="uploader1 blue">
+				<input type="button" name="file" class="button" value="打开">
+				<input id="file" type="file" accept="image/*" multiple="">
+			</div>
+			<input id="clipBtn" value="截取">
+		</div>
+		<div id="view" style="background-color: rgb(102, 102, 102); background-repeat: no-repeat; background-position: center center; background-size: contain;"></div>
+	</article>
+
+	<section class="applyteacher_main">
+		<div class="title">讲师特权</div>
+		<div class="vip_main">
+			<div class="vip">
+				<div class="ico1"><i class="fa fa-qrcode"></i></div>
+				<div class="text">
+					<div class="t1">课程收入</div>
+					<div class="t2">课程每出售一次，即可收入课程佣金</div>
+				</div>
+			</div>
+			<div class="vip">
+				<div class="ico2"><i class="fa fa-cny"></i></div>
+				<div class="text">
+					<div class="t1">自由提现</div>
+					<div class="t2">收入存入账户，可提现到微信钱包</div>
+				</div>
+			</div>
+		</div>
+
+
+	<article class="btn-1">
+		<button onclick="return checksubmit();">提交申请</button>
+	</article>
+
+
+<footer>
+    <a href="./index.php?i=2&amp;c=entry&amp;t=1&amp;do=index&amp;m=fy_lessonv2">阅读app</a>
+</footer>
+
+<div id="spinners" style="display:none;"><div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></div>
+
+<script type="text/javascript">
+	function checksubmit() {
+        var teacher = $("#teacher").val();
+        var teacherdes = $("#teacherdes").val();
+        var teacherphoto = $("input[name='teacherphoto']").val();
+
+        if (teacher == "") {
+            alert("请填写讲师名称");
+            return false;
+        }
+        if (teacherdes == "") {
+            alert("请填写讲师介绍");
+            return false;
+        }
+		if (teacherphoto == "") {
+            alert("请上传讲师相片");
+            return false;
+        }
+        document.getElementById("spinners").style.display = 'block';
+        return true;
+    }
+</script>
+
+<script src="http://shop.itischinese.com/addons/fy_lessonv2/template/mobile/style/jsv2/photoClip/iscroll-zoom.js"></script>
+<script src="http://shop.itischinese.com/addons/fy_lessonv2/template/mobile/style/jsv2/photoClip/hammer.js"></script>
+<script src="http://shop.itischinese.com/addons/fy_lessonv2/template/mobile/style/jsv2/photoClip/jquery.photoClip.js"></script>
+<script type="text/javascript">
+	$("#logox").click(function(){
+		$(".htmleaf-container").show();
+	})
+</script>
+<script>
+    var obUrl = ''
+    $("#clipArea").photoClip({
+        width: 199,
+        height: 199,
+        file: "#file",
+        view: "#view",
+        ok: "#clipBtn",
+        loadStart: function() {
+            console.log("照片读取中");
+        },
+        loadComplete: function() {
+            console.log("照片读取完成");
+        },
+        clipFinish: function(dataURL) {
+            uploadPhotoImage(dataURL);
+			$(".htmleaf-container").hide();
+        }
+    });
+</script>
+<script type="text/javascript">
+	function uploadPhotoImage(dataURL){
+		$.ajax({
+			 url: './index.php?i=2&c=entry&type=base64&do=AjaxUploadImage&m=fy_lessonv2',
+			type: 'POST',
+			data: {imageData: dataURL},
+			dateType: "json",
+			success:function(data){
+				var res = JSON.parse(data);
+				$("#teacherphoto_show").attr("src", "http://shop.itischinese.com/attachment/" + res.path);
+				$("#teacherphoto_hide").val(res.path);
+			}
+		})
+	}
+</script>
+
+<script src="http://shop.itischinese.com/addons/fy_lessonv2/template/mobile/style/jsv2/ajaxfileupload.js"></script>
+<script type="text/javascript">
+	function uploadImage(idx){
+		document.getElementById("spinners").style.display = 'block';
+		$.ajaxFileUpload({
+				url:'./index.php?i=2&c=entry&do=AjaxUploadImage&m=fy_lessonv2',
+				secureuri:false,
+				fileElementId:'uploadFile'+idx,
+				dataType: 'json',
+				success: function (data, status){
+					if(data.success == true){
+						if(idx==2){
+							$("#qrcode_url_show").attr("src", "http://shop.itischinese.com/attachment/" + data.path);
+							$("#qrcode_url_hide").val(data.path);
+						}
+					}else{
+						alert("上传失败，请稍候重试");
+					}
+					document.getElementById("spinners").style.display = 'none';
+				},
+				error: function(data, status, e) {
+					alert("网络错误，请稍候重试");
+					document.getElementById("spinners").style.display = 'none';
+				}
+		});
+		return false;
+	}
+</script>
+
+
+		<!-- 底部导航 -->
+		<div class="weui_tabbar ">
+
+			<a href="./index.php?i=2&amp;c=entry&amp;do=index&amp;m=fy_lessonv2&amp;t=1547891640" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-home menu_on" style="font-size: 24px;"></i>
+				</div>
+				<p class="weui_tabbar_label">首 页</p>
+			</a>
+
+			<a href="./index.php?i=2&amp;c=entry&amp;do=search&amp;m=fy_lessonv2&amp;t=1547891640" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-video-camera"></i>
+				</div>
+				<p class="weui_tabbar_label">全部课程</p>
+			</a>
+
+
+			<a href="./index.php?i=2&amp;c=entry&amp;do=mylesson&amp;m=fy_lessonv2&amp;status=&amp;t=1547891640" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-book"></i>
+				</div>
+				<p class="weui_tabbar_label">我的课程</p>
+			</a>
+
+			<a href="./index.php?i=2&amp;c=entry&amp;do=self&amp;m=fy_lessonv2&amp;t=1547891640" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-user"></i>
+				</div>
+				<p class="weui_tabbar_label">个人中心</p>
+			</a>
+		</div>
+		<!-- /底部导航 -->
+	</section></form></div>
+</div>
+
+<script>
+	//动画效果
+	var mySwiper = new Swiper('.swiper-container', {
+		pagination: '.swiper-pagination',
+		/*分页器焦点*/
+		effect: 'coverflow',
+		/*动画过渡效果*/
+		paginationClickable: true,
+		/*添加点击效果*/
+		centeredSlides: true,
+		/*活动内容居中*/
+		autoplay: 5000,
+		/*自动滑动时间*/
+		autoplayDisableOnInteraction: false,
+		/*用户操作动画，3s后可以继续执行动画*/
+		preloadImages: false,
+		lazyLoading: true
+	});
+	//   分类为两个时的样式
+	var $gridNum = $('.grid_wrap .grid_item')
+	if($gridNum.length == 2) {
+		$gridNum.first().css('border-right', '1px solid #f1f1f5')
+	}
+	//课程为奇数时图片平铺
+	$('.course_main').each(function() {
+		var $item = $(this).find(' .course_item');
+		var itemNum = $item.length % 2;
+		if(itemNum == 1 && $(this).hasClass('course_live')) {
+			var $firstitem = $item.first(),
+				$img = $firstitem.find("img");
+			$firstitem.css('width', "100%");
+			var wd = $firstitem.width() || window.innerWidth - 20;
+			var boxh = Math.ceil(wd / 2);
+			$img.wrap("<div class='big-box' style='height:" + boxh + "px'></div>");
+		} else if(itemNum == 1 && $(this).hasClass('course_other')) {
+			var $lastitem = $item.last(),
+				$img = $lastitem.find("img");
+			$lastitem.css('width', "100%");
+			var wd = $lastitem.width() || window.innerWidth - 20;
+			var boxh = Math.ceil(wd / 2);
+			$img.wrap("<div class='big-box' style='height:" + boxh + "px'></div>");
+		}
+	});
+</script>
+<div style="display:none;">
+	</div>
+</body></html>

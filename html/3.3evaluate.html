@@ -1,0 +1,262 @@
+<html><head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="full-screen" content="yes">
+		<meta name="browsermode" content="application">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="x5-page-mode" content="app">
+		<title>
+							评价订单 - 阅读app
+		</title>
+		<script src="../style/jquery.min.js"></script>
+		<script src="../style/swiper.3.1.7.min.js"></script>
+		<link rel="stylesheet" href="../style/weui.min.css">
+		<link rel="stylesheet" href="../style/font-awesome.min.css">
+		<link rel="stylesheet" href="../style/index.css">
+
+<script src="../style/jweixin-1.3.2.js"></script>
+<script type="text/javascript">
+	window.sysinfo = window.sysinfo || {"uniacid":2,"acid":"2","siteroot":"http:\/\/shop.itischinese.com\/","siteurl":"http:\/\/shop.itischinese.com\/app\/index.php?i=2&c=entry&op=display&orderid=1000000013&do=evaluate&m=fy_lessonv2&wxref=mp.weixin.qq.com","attachurl":"http:\/\/shop.itischinese.com\/attachment\/","cookie":{"pre":"6114_"},"openid":"om1HxvvE-OW8NE4ZaVUpQn-MGqWI","MODULE_URL":"http:\/\/shop.itischinese.com\/addons\/fy_lessonv2\/"} || {};
+
+	// jssdk config 对象
+	jssdkconfig = {"appId":"wx4a922ba228b745ac","nonceStr":"yVkhfC9P2M6Kz696","timestamp":"1548000847","signature":"ba7c167d49da2d63a6187783e2d78f04ab07cc14"} || {};
+
+	// 是否启用调试
+	jssdkconfig.debug = false;
+
+	jssdkconfig.jsApiList = [
+		'checkJsApi',
+		'onMenuShareTimeline',
+		'onMenuShareAppMessage',
+		'onMenuShareQQ',
+		'onMenuShareWeibo',
+		'hideMenuItems',
+		'showMenuItems',
+		'hideAllNonBaseMenuItem',
+		'showAllNonBaseMenuItem',
+		'translateVoice',
+		'startRecord',
+		'stopRecord',
+		'onRecordEnd',
+		'playVoice',
+		'pauseVoice',
+		'stopVoice',
+		'uploadVoice',
+		'downloadVoice',
+		'chooseImage',
+		'previewImage',
+		'uploadImage',
+		'downloadImage',
+		'getNetworkType',
+		'openLocation',
+		'getLocation',
+		'hideOptionMenu',
+		'showOptionMenu',
+		'closeWindow',
+		'scanQRCode',
+		'chooseWXPay',
+		'openProductSpecificView',
+		'addCard',
+		'chooseCard',
+		'openCard'
+	];
+
+	wx.config(jssdkconfig);
+
+</script>		<script type="text/javascript">
+		wx.ready(function(){
+			var shareData = {
+				title: "评价订单",
+				desc: "",
+				link: "http://shop.itischinese.com/app/index.php?i=2&c=entry&op=display&orderid=1000000013&do=evaluate&m=fy_lessonv2&wxref=mp.weixin.qq.com&uid=3",
+				imgUrl: "http://shop.itischinese.com/attachment/",
+				trigger: function (res) {},
+				complete: function (res) {},
+				success: function (res) {},
+				cancel: function (res) {},
+				fail: function (res) {}
+			};
+			wx.onMenuShareTimeline(shareData);
+			wx.onMenuShareAppMessage(shareData);
+			wx.onMenuShareQQ(shareData);
+			wx.onMenuShareWeibo(shareData);
+			wx.onMenuShareQZone(shareData);
+		});
+		</script>
+	</head>
+	<body>
+		<div class="tabbar tabbar_wrap page_wrap">
+			<div class="weui_tab">
+<link href="../style/evaluate.css" rel="stylesheet">
+<link href="../style/alert.css" rel="stylesheet">
+<script type="text/javascript" src="../style/alert.js"></script>
+
+
+<div class="header-2 cbox">
+	<a href="javascript:history.go(-1);" class="ico go-back"></a>
+	<div class="flex title">评价订单</div>
+</div>
+
+<div class="contaniner fixed-cont">
+	<section class="go-order" style="padding:1% 5%;">
+		<div class="order-shop">
+			<form id="submit_form" method="post" onsubmit="return checksubmit();">
+				<ul style="border:#EFEFEF solid 1px;">
+					<li>
+						<div class="oc-info">
+							<div class="oc-info-l">
+								<img src="http://shop.itischinese.com/attachment/images/2/2018/12/azo41LDH7CChH7La6HAM7M1g1gl617.jpeg">
+							</div>
+							<div class="oc-info-r">
+								<h2>课程:《阅读app课程》</h2>
+								<div>价格:<strong style="color:red;">10.00</strong> 元</div>
+							</div>
+						</div>
+						<div class="oc-comm">
+							<ul class="oc-comm-ul">
+								<li class="c-f-sku ocm-h" id="ocm-h" onclick="selectedgrade(1);">好评<span></span></li>
+								<li class="c-f-sku ocm-z" id="ocm-z" onclick="selectedgrade(2);">中评<span></span></li>
+								<li class="c-f-sku ocm-c" id="ocm-c" onclick="selectedgrade(3);">差评<span></span></li>
+								<input type="hidden" name="grade" id="grade" value="">
+							</ul>
+						</div>
+						<div class="oc-text">
+							<span class="c-f-textarea"><textarea name="content" placeholder="请输入评论内容，最多300字" maxlength="300"></textarea></span>
+						</div>
+					</li>
+					<li>
+						<input type="submit" name="submit" value="提交评价" class="allsubmit-btn">
+						<input type="hidden" name="orderid" value="1000000013">
+						<input type="hidden" name="token" value="ceOO">
+					</li>
+				</ul>
+			</form>
+		</div>
+	</section>
+</div>
+
+<footer>
+    <a href="./index.php?i=2&amp;c=entry&amp;t=1&amp;do=index&amp;m=fy_lessonv2">阅读app</a>
+</footer>
+
+<script type="text/javascript">
+function checksubmit(){
+	var grade = $("#grade").val();
+	if(grade==''){
+		var setTitle = '提示';
+		var setContents = '请对我们的服务评分';
+		var setButton = '["确定"]';
+		var setCancelUrl,setConfirmUrl = 'javascript:;';
+		$(this).openWindow(setTitle,setContents,setButton,setCancelUrl,setConfirmUrl);
+		return false;
+	}
+
+	document.getElementById("submit_form").submit();
+}
+
+
+function selectedgrade(obj){
+    if(obj=='1'){
+	    $("#ocm-h").addClass('selected');
+		$("#ocm-z").removeClass('selected');
+		$("#ocm-c").removeClass('selected');
+	}else if(obj=='2'){
+	    $("#ocm-h").removeClass('selected');
+		$("#ocm-z").addClass('selected');
+		$("#ocm-c").removeClass('selected');
+	}else if(obj=='3'){
+	    $("#ocm-h").removeClass('selected');
+		$("#ocm-z").removeClass('selected');
+		$("#ocm-c").addClass('selected');
+	}
+	document.getElementById("grade").value = obj;
+}
+</script>
+
+
+<!-- 底部导航 -->
+		<div class="weui_tabbar ">
+
+			<a href="./index.html" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-home menu_on" style="font-size: 24px;"></i>
+				</div>
+				<p class="weui_tabbar_label">首 页</p>
+			</a>
+
+			<a href="./search.html" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-video-camera"></i>
+				</div>
+				<p class="weui_tabbar_label">全部课程</p>
+			</a>
+
+
+			<a href="./mylesson.html" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-book"></i>
+				</div>
+				<p class="weui_tabbar_label">我的课程</p>
+			</a>
+
+			<a href="./self.html" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-user"></i>
+				</div>
+				<p class="weui_tabbar_label">个人中心</p>
+			</a>
+		</div>
+		<!-- /底部导航 -->
+	</div>
+</div>
+
+<script>
+	//动画效果
+	var mySwiper = new Swiper('.swiper-container', {
+		pagination: '.swiper-pagination',
+		/*分页器焦点*/
+		effect: 'coverflow',
+		/*动画过渡效果*/
+		paginationClickable: true,
+		/*添加点击效果*/
+		centeredSlides: true,
+		/*活动内容居中*/
+		autoplay: 5000,
+		/*自动滑动时间*/
+		autoplayDisableOnInteraction: false,
+		/*用户操作动画，3s后可以继续执行动画*/
+		preloadImages: false,
+		lazyLoading: true
+	});
+	//   分类为两个时的样式
+	var $gridNum = $('.grid_wrap .grid_item')
+	if($gridNum.length == 2) {
+		$gridNum.first().css('border-right', '1px solid #f1f1f5')
+	}
+	//课程为奇数时图片平铺
+	$('.course_main').each(function() {
+		var $item = $(this).find(' .course_item');
+		var itemNum = $item.length % 2;
+		if(itemNum == 1 && $(this).hasClass('course_live')) {
+			var $firstitem = $item.first(),
+				$img = $firstitem.find("img");
+			$firstitem.css('width', "100%");
+			var wd = $firstitem.width() || window.innerWidth - 20;
+			var boxh = Math.ceil(wd / 2);
+			$img.wrap("<div class='big-box' style='height:" + boxh + "px'></div>");
+		} else if(itemNum == 1 && $(this).hasClass('course_other')) {
+			var $lastitem = $item.last(),
+				$img = $lastitem.find("img");
+			$lastitem.css('width', "100%");
+			var wd = $lastitem.width() || window.innerWidth - 20;
+			var boxh = Math.ceil(wd / 2);
+			$img.wrap("<div class='big-box' style='height:" + boxh + "px'></div>");
+		}
+	});
+</script>
+<div style="display:none;">
+	</div>
+<script>;</script><script type="text/javascript" src="http://shop.itischinese.com/app/index.php?i=2&amp;c=utility&amp;a=visit&amp;do=showjs&amp;m=fy_lessonv2"></script>
+</body></html>

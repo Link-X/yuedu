@@ -1,0 +1,373 @@
+.<html><head></head><body>&nbsp;<!-- 
+ * 确认下单
+ * ============================================================================
+ * 版权所有 2015-2018 微课堂团队，并保留所有权利。
+ * 网站地址: https://wx.haoshu888.com
+ * ----------------------------------------------------------------------------
+ * 这不是一个自由软件！不允许对程序代码以任何形式任何目的的再发布，作者将保留
+ * 追究法律责任的权力和最终解释权。
+-->
+
+
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="full-screen" content="yes">
+		<meta name="browsermode" content="application">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="x5-page-mode" content="app">
+		<title>
+							确认下单 - 阅读app
+		</title>
+		<script src="../style/jquery.min.js"></script>
+		<script src="../style/swiper.3.1.7.min.js"></script>
+		<link rel="stylesheet" href="../style/weui.min.css">
+		<link rel="stylesheet" href="../style/font-awesome.min.css">
+		<link rel="stylesheet" href="../style/index.css">
+
+<script src="../style/jweixin-1.3.2.js"></script>
+<script type="text/javascript">
+	window.sysinfo = window.sysinfo || {"uniacid":2,"acid":"2","siteroot":"http:\/\/shop.itischinese.com\/","siteurl":"http:\/\/shop.itischinese.com\/app\/index.php?i=2&c=entry&id=8&do=confirm&m=fy_lessonv2&spec_id=17","attachurl":"http:\/\/shop.itischinese.com\/attachment\/","cookie":{"pre":"6114_"},"openid":"om1HxvvE-OW8NE4ZaVUpQn-MGqWI","MODULE_URL":"http:\/\/shop.itischinese.com\/addons\/fy_lessonv2\/"} || {};
+
+	// jssdk config 对象
+	jssdkconfig = {"appId":"wx4a922ba228b745ac","nonceStr":"E4fzo77w8g27WiG4","timestamp":"1547999459","signature":"b4e183446ceea8788c84788bb483d6a8955fcc51"} || {};
+
+	// 是否启用调试
+	jssdkconfig.debug = false;
+
+	jssdkconfig.jsApiList = [
+		'checkJsApi',
+		'onMenuShareTimeline',
+		'onMenuShareAppMessage',
+		'onMenuShareQQ',
+		'onMenuShareWeibo',
+		'hideMenuItems',
+		'showMenuItems',
+		'hideAllNonBaseMenuItem',
+		'showAllNonBaseMenuItem',
+		'translateVoice',
+		'startRecord',
+		'stopRecord',
+		'onRecordEnd',
+		'playVoice',
+		'pauseVoice',
+		'stopVoice',
+		'uploadVoice',
+		'downloadVoice',
+		'chooseImage',
+		'previewImage',
+		'uploadImage',
+		'downloadImage',
+		'getNetworkType',
+		'openLocation',
+		'getLocation',
+		'hideOptionMenu',
+		'showOptionMenu',
+		'closeWindow',
+		'scanQRCode',
+		'chooseWXPay',
+		'openProductSpecificView',
+		'addCard',
+		'chooseCard',
+		'openCard'
+	];
+
+	wx.config(jssdkconfig);
+
+</script>		<script type="text/javascript">
+		wx.ready(function(){
+			var shareData = {
+				title: "确认下单",
+				desc: "",
+				link: "http://shop.itischinese.com/app/index.php?i=2&c=entry&id=8&do=confirm&m=fy_lessonv2&spec_id=17&uid=3",
+				imgUrl: "http://shop.itischinese.com/attachment/",
+				trigger: function (res) {},
+				complete: function (res) {},
+				success: function (res) {},
+				cancel: function (res) {},
+				fail: function (res) {}
+			};
+			wx.onMenuShareTimeline(shareData);
+			wx.onMenuShareAppMessage(shareData);
+			wx.onMenuShareQQ(shareData);
+			wx.onMenuShareWeibo(shareData);
+			wx.onMenuShareQZone(shareData);
+		});
+		</script>
+
+
+		<div class="tabbar tabbar_wrap page_wrap">
+			<div class="weui_tab">
+<link href="../style/confirm.css" rel="stylesheet">
+<style type="text/css">
+.tabbar_wrap{margin-top:-22px;}
+</style>
+
+<div class="header-2 cbox">
+	<a href="javascript:history.go(-1);" class="ico go-back"></a>
+	<div class="flex title">确认下单</div>
+</div>
+
+<div class="order-form">
+	<form id="orderForm" method="post" action="./index.php?i=2&amp;c=entry&amp;do=addtoorder&amp;m=fy_lessonv2">
+	<!-- 课程订单信息 -->
+	<div class="confirm-order">
+		<div class="addorder_good ">
+			<div class="ico"><img src="http://shop.itischinese.com/attachment/images/2/2018/12/R1Fl1o8J2Oz42xnn8840OJQ10D8Jo8.jpeg"></div>
+			<div class="shop">田先生讲师</div>
+			<div class="good">
+				<div class="img" onclick="location.href = './index.php?i=2&amp;c=entry&amp;id=8&amp;do=lesson&amp;m=fy_lessonv2'">
+					<img src="http://shop.itischinese.com/attachment/images/2/2018/12/azo41LDH7CChH7La6HAM7M1g1gl617.jpeg" alt="">
+				</div>
+				<div class="info" onclick="location.href = './index.php?i=2&amp;c=entry&amp;id=8&amp;do=lesson&amp;m=fy_lessonv2'">
+					<div class="inner">
+						<div class="name">阅读app课程</div>
+						<p style="font-size:12px;color:#B3B3B3;">
+							已选：
+															有效期30天													</p>
+					</div>
+				</div>
+				<div class="price">
+					<div class="pnum">￥<span class="marketprice">10.00</span></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="addorder_price sel_coupon" style="margin-top:16px;">
+			<div class="price" style="border:none;">
+				<div class="line" style="line-height:32px;">
+					优惠券 <i class="coupon">0张可用</i><span>&gt;</span>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="addorder_price">
+			<div class="price" style="border:none;">
+				<div class="line">
+					课程金额
+					<span>￥<span class="goodsprice">10.00</span></span>
+				</div>
+																				<div class="line" style="color:#f23030;">
+					应付金额
+					<span class="total" id="total" style="font-size:18px;">10.00</span>
+				</div>
+			</div>
+		</div>
+		<input type="hidden" name="id" value="8">
+		<input type="hidden" name="spec_id" value="17">
+		<input type="hidden" name="coupon_id" id="coupon_id" value="0">
+		<input type="hidden" id="couponMoney" value="0">
+		<input type="hidden" id="deducMoney" value="0">
+		<div class="paysub" onclick="subForm()">立即支付</div>
+	</div>
+
+	<!-- 优惠券列表 -->
+	<div class="common-wrapper pad52" style="display:none;">
+		<div class="tab-con">
+			<div class="new-coupon" onclick="useCoupon(this, 0, 0);">
+				<div class="new-bdcolor bd-bd">
+					<div class="newCou-bg newCou-bg"></div>
+					<div class="newCou-item" style="color:#a9a9a9;">
+						<div class="newCou-content cf" style="padding-bottom: 15px;">
+							<div class="fl">
+								<div class="ci-left">
+									<strong class="pic-ch"></strong>
+								</div>
+								<div class="newCou-l">
+									<div class="newCou-pri-content myf-newCou-pri-content">
+										<span class="newCou-price myf-price">不使用优惠券</span>
+									</div>
+								</div>
+							</div>
+							<div class="newCou-r">
+								<span class="newCou-date-name">&nbsp;</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+					</div>
+		<div class="btn-bar border-1px button-middle" id="submitDiv">
+			<a href="javascript:;" id="confirm-coupon" class="bb-btn02 button-change-w">确定</a>
+		</div>
+	</div>
+	</form>
+</div>
+
+<div id="spinners" style="display:none;"><div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></div>
+
+<script type="text/javascript">
+
+//选择优惠券
+$(".sel_coupon").click(function(){
+	$(".confirm-order").hide();
+	$(".common-wrapper").show();
+});
+
+$("#confirm-coupon").click(function(){
+	$(".confirm-order").show();
+	$(".common-wrapper").hide();
+});
+
+function useCoupon(o, couponId, amount){
+	$(".pic-ch").removeClass("pic-ched");
+	$(o).find("strong").addClass("pic-ched");
+	$("#coupon_id").val(couponId);
+	$("#couponMoney").val(amount);
+}
+//计算优惠券金额
+$("#confirm-coupon").click(function(){
+	var couponMoney = parseFloat($("#couponMoney").val());
+	var total = parseFloat(document.getElementById("total").innerHTML);
+	var coupon_money = parseFloat(document.getElementById("coupon_money").innerHTML);
+	var price = 10.00;
+
+	document.getElementById("coupon_money").innerHTML = couponMoney;
+
+	var lastTotal = (total + coupon_money - couponMoney).toFixed(2);
+	if(lastTotal<=0){
+		lastTotal = 0;
+		$("#couponMoney").val(price);
+		document.getElementById("coupon_money").innerHTML = price;
+	}
+
+	document.getElementById("total").innerHTML = lastTotal;
+
+});
+
+//计算积分抵扣金额
+function checkIntegral(integral){
+	var deduct_integral = 0;
+	var deduct_money = 0;
+
+	if(integral > deduct_integral){
+		document.getElementById("notice").innerHTML = "当前最多可使用"+deduct_integral+"个积分，请重新输入";
+		return false;
+	}else{
+		document.getElementById("notice").innerHTML = "可帮您抵扣" + (integral*deduct_money).toFixed(2) + "元";
+	}
+
+	var total = parseFloat(document.getElementById("total").innerHTML);
+	var nowCouponAmount = (integral*deduct_money).toFixed(2);
+	if(nowCouponAmount > total){
+		document.getElementById("notice").innerHTML = "当前输入积分抵消金额大于应付金额，请重新输入";
+		return false;
+	}
+
+	document.getElementById("deduct_money").innerHTML = nowCouponAmount;
+
+	var lastTotal = (total + parseFloat($("#deducMoney").val()) - nowCouponAmount).toFixed(2);
+	if(lastTotal<=0){
+		lastTotal = 0;
+	}
+	document.getElementById("total").innerHTML = lastTotal;
+	$("#deducMoney").val(nowCouponAmount);
+
+}
+
+function subForm(){
+	var credit1 = 0.00;
+	var deduct_integral = $("#deduct_integral").val();
+	var lesson_integral = 0;
+	if(deduct_integral > lesson_integral){
+		alert("当前课程最多可使用"+lesson_integral+"积分，请重新输入");
+		return false;
+	}
+	if(deduct_integral > credit1){
+		alert("您的积分不足，请重新输入");
+		return false;
+	}
+
+
+	document.getElementById("spinners").style.display = 'block';
+	document.getElementById("orderForm").submit();
+}
+</script>
+
+<!-- 底部导航 -->
+		<div class="weui_tabbar ">
+
+			<a href="./index.html" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-home menu_on" style="font-size: 24px;"></i>
+				</div>
+				<p class="weui_tabbar_label">首 页</p>
+			</a>
+
+			<a href="./search.html" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-video-camera"></i>
+				</div>
+				<p class="weui_tabbar_label">全部课程</p>
+			</a>
+
+
+			<a href="./mylesson.html" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-book"></i>
+				</div>
+				<p class="weui_tabbar_label">我的课程</p>
+			</a>
+
+			<a href="./self.html" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-user"></i>
+				</div>
+				<p class="weui_tabbar_label">个人中心</p>
+			</a>
+		</div>
+		<!-- /底部导航 -->
+	</div>
+</div>
+
+<script>
+	//动画效果
+	var mySwiper = new Swiper('.swiper-container', {
+		pagination: '.swiper-pagination',
+		/*分页器焦点*/
+		effect: 'coverflow',
+		/*动画过渡效果*/
+		paginationClickable: true,
+		/*添加点击效果*/
+		centeredSlides: true,
+		/*活动内容居中*/
+		autoplay: 5000,
+		/*自动滑动时间*/
+		autoplayDisableOnInteraction: false,
+		/*用户操作动画，3s后可以继续执行动画*/
+		preloadImages: false,
+		lazyLoading: true
+	});
+	//   分类为两个时的样式
+	var $gridNum = $('.grid_wrap .grid_item')
+	if($gridNum.length == 2) {
+		$gridNum.first().css('border-right', '1px solid #f1f1f5')
+	}
+	//课程为奇数时图片平铺
+	$('.course_main').each(function() {
+		var $item = $(this).find(' .course_item');
+		var itemNum = $item.length % 2;
+		if(itemNum == 1 && $(this).hasClass('course_live')) {
+			var $firstitem = $item.first(),
+				$img = $firstitem.find("img");
+			$firstitem.css('width', "100%");
+			var wd = $firstitem.width() || window.innerWidth - 20;
+			var boxh = Math.ceil(wd / 2);
+			$img.wrap("<div class='big-box' style='height:" + boxh + "px'></div>");
+		} else if(itemNum == 1 && $(this).hasClass('course_other')) {
+			var $lastitem = $item.last(),
+				$img = $lastitem.find("img");
+			$lastitem.css('width', "100%");
+			var wd = $lastitem.width() || window.innerWidth - 20;
+			var boxh = Math.ceil(wd / 2);
+			$img.wrap("<div class='big-box' style='height:" + boxh + "px'></div>");
+		}
+	});
+</script>
+<div style="display:none;">
+	</div>
+<script>;</script><script type="text/javascript" src="http://shop.itischinese.com/app/index.php?i=2&amp;c=utility&amp;a=visit&amp;do=showjs&amp;m=fy_lessonv2"></script>
+</body></html>

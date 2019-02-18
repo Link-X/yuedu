@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- saved from url=(0088)http://shop.itischinese.com/app/index.php?i=2&c=entry&do=self&m=fy_lessonv2&t=1547537894 -->
+<html><head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	  <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>
+							全部分类 - 阅读app
+		</title>
+		<script src="../style/jquery.min.js"></script>
+		<script src="../style/swiper.3.1.7.min.js"></script>
+				<link rel="stylesheet" href="../style/weui.min.css">
+		<link rel="stylesheet" href="../style/font-awesome.min.css">
+		<link rel="stylesheet" href="../style/index.css">
+    <link href="../style/new_self.css" rel="stylesheet">
+    <style media="screen">
+      header{ background-color: #f2f2f2; }
+      header ul li { height: 50px; line-height: 50px; text-align: center; display: none; color: #323237; position: relative;font-size: 18px;  }
+      header ul li.active{ display: block; }
+      .classify_box {
+        position: absolute;
+        display: flex;
+        top: 47px;
+        bottom: 0;
+        width: 100%;
+      }
+      .menu {
+        width: 84px;
+        background: #f8f8f8;
+        height: inherit;
+        overflow-y: auto;
+        position: relative;
+      }
+    </style>
+	</head>
+	<body >
+    <header>
+        <ul>
+            <li class="border-b active" >全部分类</li>
+        </ul>
+    </header>
+    <div class="classify_box">
+      <div class="menu">
+        <ul>
+          <li>推荐分类</li>
+        </ul>
+      </div>
+      <div class="container">
+        <ul>
+          <li>全部课程</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+  apiready = function() {
+      var h = $api.getStorage('main_h');
+      $("body").height(h);
+      api.setStatusBarStyle({
+        style: 'light',
+        color: '#FBFBFC'
+      });
+      console.log(1)
+      getData()
+    };
+
+    function getData() {
+      api.ajax({
+          url: 'http://shop.itischinese.com/app/index.php?i=2&c=entry&op=allcategory&do=search&m=fy_lessonv2',
+          method: 'get',
+          data: {
+              values: {}
+          }
+      }, function(ret, err) {
+        if (ret) {
+          console.log(JSON.stringify(ret))
+        } else {
+          console.log(JSON.stringify(err))
+        }
+      })
+    }
+
+</script>
+</html>

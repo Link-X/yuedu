@@ -1,0 +1,319 @@
+.<html><head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="full-screen" content="yes">
+		<meta name="browsermode" content="application">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="x5-page-mode" content="app">
+		<title>
+							讲师中心 - 阅读app
+		</title>
+<script src="../style/jquery.min.js"></script>
+		<script src="../style/swiper.3.1.7.min.js"></script>
+		<link rel="stylesheet" href="../style/weui.min.css">
+		<link rel="stylesheet" href="../style/font-awesome.min.css">
+		<link rel="stylesheet" href="../style/index.css">
+
+<script src="../style/jweixin-1.3.2.js"></script>
+<script type="text/javascript">
+	window.sysinfo = window.sysinfo || {"uniacid":2,"acid":"2","siteroot":"http:\/\/shop.itischinese.com\/","siteurl":"http:\/\/shop.itischinese.com\/app\/index.php?i=2&c=entry&do=teachercenter&m=fy_lessonv2","attachurl":"http:\/\/shop.itischinese.com\/attachment\/","cookie":{"pre":"6114_"},"openid":"om1HxvvE-OW8NE4ZaVUpQn-MGqWI","MODULE_URL":"http:\/\/shop.itischinese.com\/addons\/fy_lessonv2\/"} || {};
+
+	// jssdk config 对象
+	jssdkconfig = {"appId":"wx4a922ba228b745ac","nonceStr":"xPpf6pRqqFAQt71p","timestamp":"1547993157","signature":"c6b2c20208a9c6b1e2349a9f4e9f2408f7c68761"} || {};
+
+	// 是否启用调试
+	jssdkconfig.debug = false;
+
+	jssdkconfig.jsApiList = [
+		'checkJsApi',
+		'onMenuShareTimeline',
+		'onMenuShareAppMessage',
+		'onMenuShareQQ',
+		'onMenuShareWeibo',
+		'hideMenuItems',
+		'showMenuItems',
+		'hideAllNonBaseMenuItem',
+		'showAllNonBaseMenuItem',
+		'translateVoice',
+		'startRecord',
+		'stopRecord',
+		'onRecordEnd',
+		'playVoice',
+		'pauseVoice',
+		'stopVoice',
+		'uploadVoice',
+		'downloadVoice',
+		'chooseImage',
+		'previewImage',
+		'uploadImage',
+		'downloadImage',
+		'getNetworkType',
+		'openLocation',
+		'getLocation',
+		'hideOptionMenu',
+		'showOptionMenu',
+		'closeWindow',
+		'scanQRCode',
+		'chooseWXPay',
+		'openProductSpecificView',
+		'addCard',
+		'chooseCard',
+		'openCard'
+	];
+
+	wx.config(jssdkconfig);
+
+</script>		<script type="text/javascript">
+		wx.ready(function(){
+			var shareData = {
+				title: "讲师中心",
+				desc: "",
+				link: "http://shop.itischinese.com/app/index.php?i=2&c=entry&do=teachercenter&m=fy_lessonv2&uid=3",
+				imgUrl: "http://shop.itischinese.com/attachment/",
+				trigger: function (res) {},
+				complete: function (res) {},
+				success: function (res) {},
+				cancel: function (res) {},
+				fail: function (res) {}
+			};
+			wx.onMenuShareTimeline(shareData);
+			wx.onMenuShareAppMessage(shareData);
+			wx.onMenuShareQQ(shareData);
+			wx.onMenuShareWeibo(shareData);
+			wx.onMenuShareQZone(shareData);
+		});
+		</script>
+	</head>
+	<body>
+		<div class="tabbar tabbar_wrap page_wrap">
+			<div class="weui_tab">
+<link href="../style/teacherCenter.css" rel="stylesheet">
+
+<div class="header-2 cbox" id="header">
+	<a href="" class="ico go-back"></a>
+	<div class="flex title">讲师中心</div>
+</div>
+
+<section class="aui-scrollView">
+	<div class="aui-flex-box aui-panel">
+		<a href="javascript:void(0);" class="aui-panel-cell">
+			<div class="aui-panel-cell-hd">
+				<img src="http://thirdwx.qlogo.cn/mmopen/PiajxSqBRaEL9VCliaMrD27ibu9QGp6BZ4UK8EthECvs0G1cOzvr1VnLRK45mH87c2dicWzcLXpL1t1jfxbrRfiagzQ/132" alt="头像">
+			</div>
+			<div class="aui-panel-cell-bd">
+				<h4>袁波</h4>
+				<p>加入时间：2019-01-20 22:02</p>
+			</div>
+			<div class="aui-panel-cell-fr">
+									<span class="label label-success">通过</span>
+							</div>
+		</a>
+	</div>
+
+	<div class="aui-flex-box">
+		<div class="aui-flex-box-bd">
+			<h2>可提现课程收入(元)</h2>
+			<h3>0.00</h3>
+		</div>
+		<div class="aui-flex-box-fr"></div>
+	</div>
+
+	<div class="aui-rankings">
+		<a href="javascript:;" class="aui-rankings-item clearfix">
+			<span>累计课程收入(元)：</span>
+			<span class="aui-rankings-title">0.00</span>
+		</a>
+	</div>
+	<div class="divHeight"></div>
+
+    <div class="teache-menu">
+        <a href="">
+			<div class="nav nav1" id="teacher" onclick="">
+				<i class="ico ico-mylesson"></i>
+				<div class="title">
+					我的课程				</div>
+				<div class="con">
+					<span>0</span>节课程
+				</div>
+			</div>
+		</a>
+        <a href="">
+			<div class="nav nav2" id="incomelog" onclick="">
+				<i class="ico ico-lesson-income"></i>
+				<div class="title">
+					课程收入				</div>
+				<div class="con">
+					课程收入明细				</div>
+			</div>
+		</a>
+        <a href="">
+			<div class="nav nav3" id="cashlog" onclick="">
+				<i class="ico ico-lessoncash-log"></i>
+				<div class="title">
+					提现记录				</div>
+				<div class="con">
+					收入提现记录				</div>
+			</div>
+		</a>
+    </div>
+    <div class="teache-menu">
+		<a href="">
+			<div class="nav nav1" id="lessoncash" onclick="">
+				<i class="ico ico-cash"></i>
+				<div class="title">
+					申请提现				</div>
+				<div class="con">
+					讲师课程收入提现				</div>
+			</div>
+		</a>
+        <a href="">
+			<div class="nav nav1" id="teacheraccount" onclick="">
+				<i class="ico ico-account"></i>
+				<div class="title">
+					账号管理				</div>
+				<div class="con">
+					登录讲师平台凭证				</div>
+			</div>
+		</a>
+    </div>
+</section>
+
+<footer>
+    <a href="">阅读app</a>
+</footer>
+
+		<!-- 底部导航 -->
+		<!-- <div class="weui_tabbar ">
+
+			<a href="./index.html" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-home menu_on" style="font-size: 24px;"></i>
+				</div>
+				<p class="weui_tabbar_label">首 页</p>
+			</a>
+
+			<a href="./search.html" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-video-camera"></i>
+				</div>
+				<p class="weui_tabbar_label">全部课程</p>
+			</a>
+
+
+			<a href="./mylesson.html" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-book"></i>
+				</div>
+				<p class="weui_tabbar_label">我的课程</p>
+			</a>
+
+			<a href="./self.html" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-user"></i>
+				</div>
+				<p class="weui_tabbar_label">个人中心</p>
+			</a>
+		</div> -->
+		<!-- /底部导航 -->
+
+	</div>
+</div>
+
+<script>
+	//动画效果
+	var mySwiper = new Swiper('.swiper-container', {
+		pagination: '.swiper-pagination',
+		/*分页器焦点*/
+		effect: 'coverflow',
+		/*动画过渡效果*/
+		paginationClickable: true,
+		/*添加点击效果*/
+		centeredSlides: true,
+		/*活动内容居中*/
+		autoplay: 5000,
+		/*自动滑动时间*/
+		autoplayDisableOnInteraction: false,
+		/*用户操作动画，3s后可以继续执行动画*/
+		preloadImages: false,
+		lazyLoading: true
+	});
+	//   分类为两个时的样式
+	var $gridNum = $('.grid_wrap .grid_item')
+	if($gridNum.length == 2) {
+		$gridNum.first().css('border-right', '1px solid #f1f1f5')
+	}
+	//课程为奇数时图片平铺
+	$('.course_main').each(function() {
+		var $item = $(this).find(' .course_item');
+		var itemNum = $item.length % 2;
+		if(itemNum == 1 && $(this).hasClass('course_live')) {
+			var $firstitem = $item.first(),
+				$img = $firstitem.find("img");
+			$firstitem.css('width', "100%");
+			var wd = $firstitem.width() || window.innerWidth - 20;
+			var boxh = Math.ceil(wd / 2);
+			$img.wrap("<div class='big-box' style='height:" + boxh + "px'></div>");
+		} else if(itemNum == 1 && $(this).hasClass('course_other')) {
+			var $lastitem = $item.last(),
+				$img = $lastitem.find("img");
+			$lastitem.css('width', "100%");
+			var wd = $lastitem.width() || window.innerWidth - 20;
+			var boxh = Math.ceil(wd / 2);
+			$img.wrap("<div class='big-box' style='height:" + boxh + "px'></div>");
+		}
+	});
+</script>
+<div style="display:none;">
+	</div>
+<script>;</script><script type="text/javascript" src="http://shop.itischinese.com/app/index.php?i=2&amp;c=utility&amp;a=visit&amp;do=showjs&amp;m=fy_lessonv2"></script>
+</body>
+<script type="text/javascript">
+  apiready = function() {
+    api.setStatusBarStyle({
+      style: 'light',
+      color: '#FBFBFC'
+    });
+    };
+  $(function(){
+      var h = $(window).height();
+      $("body").height(h);
+    })
+		$("#header a").on('click',function(){
+			api.closeWin({
+							name:'teachercenter'
+						});
+		})
+		$("#teacher").on('click',function(){
+	    api.openWin({
+	            name: 'teacher',
+	            url: '4.5.1teacher.html'
+	          });
+	  })
+		$("#incomelog").on('click',function(){
+	    api.openWin({
+	            name: 'incomelog',
+	            url: '4.5.2incomelog.html'
+	          });
+	  })
+		$("#cashlog").on('click',function(){
+	    api.openWin({
+	            name: 'cashlog',
+	            url: '4.5.3cashlog.html'
+	          });
+	  })
+		$("#lessoncash").on('click',function(){
+	    api.openWin({
+	            name: 'lessoncash',
+	            url: '4.5.4lessoncash.html'
+	          });
+	  })
+		$("#teacheraccount").on('click',function(){
+	    api.openWin({
+	            name: 'teacheraccount',
+	            url: '4.5.5teacheraccount.html'
+	          });
+	  })
+</script>
+</html>

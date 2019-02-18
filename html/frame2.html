@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!-- saved from url=(0087)http://shop.itischinese.com/app/index.php?i=2&c=entry&do=mylesson&m=fy_lessonv2&status= -->
+<html><head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	  <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title>
+							我的课程 - 阅读app
+		</title>
+		<script src="../style/jquery.min.js"></script>
+		<script src="../style/swiper.3.1.7.min.js"></script>
+				<link rel="stylesheet" href="../style/weui.min.css">
+		<link rel="stylesheet" href="../style/font-awesome.min.css">
+		<link rel="stylesheet" href="../style/index.css">
+
+<script src="../style/jweixin-1.3.2.js"></script>
+<script type="text/javascript">
+	window.sysinfo = window.sysinfo || {"uniacid":2,"acid":"2","siteroot":"http:\/\/shop.itischinese.com\/","siteurl":"http:\/\/shop.itischinese.com\/app\/index.php?i=2&c=entry&do=mylesson&m=fy_lessonv2&status=","attachurl":"http:\/\/shop.itischinese.com\/attachment\/","cookie":{"pre":"6114_"},"openid":"om1HxvvE-OW8NE4ZaVUpQn-MGqWI","MODULE_URL":"http:\/\/shop.itischinese.com\/addons\/fy_lessonv2\/"} || {};
+
+	// jssdk config 对象
+	jssdkconfig = {"appId":"wx4a922ba228b745ac","nonceStr":"Uv8k9tNFTsTGBjz1","timestamp":"1547537894","signature":"445159078b75e94e24c519012e1d9e1bd6a7943b"} || {};
+
+	// 是否启用调试
+	jssdkconfig.debug = false;
+
+	jssdkconfig.jsApiList = [
+		'checkJsApi',
+		'onMenuShareTimeline',
+		'onMenuShareAppMessage',
+		'onMenuShareQQ',
+		'onMenuShareWeibo',
+		'hideMenuItems',
+		'showMenuItems',
+		'hideAllNonBaseMenuItem',
+		'showAllNonBaseMenuItem',
+		'translateVoice',
+		'startRecord',
+		'stopRecord',
+		'onRecordEnd',
+		'playVoice',
+		'pauseVoice',
+		'stopVoice',
+		'uploadVoice',
+		'downloadVoice',
+		'chooseImage',
+		'previewImage',
+		'uploadImage',
+		'downloadImage',
+		'getNetworkType',
+		'openLocation',
+		'getLocation',
+		'hideOptionMenu',
+		'showOptionMenu',
+		'closeWindow',
+		'scanQRCode',
+		'chooseWXPay',
+		'openProductSpecificView',
+		'addCard',
+		'chooseCard',
+		'openCard'
+	];
+
+	wx.config(jssdkconfig);
+
+</script>		<script type="text/javascript">
+		wx.ready(function(){
+			var shareData = {
+				title: "我的课程",
+				desc: "",
+				link: "http://shop.itischinese.com/app/index.php?i=2&c=entry&do=mylesson&m=fy_lessonv2&status=&uid=3",
+				imgUrl: "http://shop.itischinese.com/attachment/",
+				trigger: function (res) {},
+				complete: function (res) {},
+				success: function (res) {},
+				cancel: function (res) {},
+				fail: function (res) {}
+			};
+			wx.onMenuShareTimeline(shareData);
+			wx.onMenuShareAppMessage(shareData);
+			wx.onMenuShareQQ(shareData);
+			wx.onMenuShareWeibo(shareData);
+			wx.onMenuShareQZone(shareData);
+		});
+		</script>
+	</head>
+	<body>
+		<div class="tabbar tabbar_wrap page_wrap">
+			<div class="weui_tab">
+<style>
+.weui_tab{overflow-y: scroll;}
+.weui_tabbar{position: fixed;}
+.submit_list{margin-top:15px;}
+.submit_list .bookname{position: absolute; top: 87px; left: 0; width: 130px; height: 16px; font-size: 12px; color: #fff; background-color: rgba(0, 0, 0, .7); text-align: center;}
+.submit_list .item h3{max-height: 23px;}
+.fr{margin-top: -5px;}
+.mylesson-btn {display: inline-block;width: 80px;height: 30px; border-radius: 5px;text-align: center;line-height: 32px;color: #fff;font-size: 14px;margin-left: 5px;}
+.cancle-btn{background-color:#a0a0a0;}
+.pay-btn{background-color:#f23030;}
+.evaluate-btn{background-color:#326fde;}
+.verify-btn{background-color:#1da167;}
+</style>
+
+<!-- <div class="header-2 cbox">
+	<a href="javascript:history.go(-1);" class="ico go-back"></a>
+	<div class="flex title" style="max-width:80%;">我的课程</div>
+</div> -->
+
+<!-- 顶部导航  -->
+<ul class="tab_wrap">
+	<li class="tab_item tab_item_on">
+		<a href="">全部课程</a>
+	</li>
+	<li class="tab_item ">
+		<a href="">待付款</a>
+	</li>
+	<li class="tab_item ">
+		<a href="">已付款</a>
+	</li>
+	<li class="tab_item ">
+		<a href="">未核销</a>
+	</li>
+</ul>
+<!-- /顶部导航  -->
+
+<!-- 订单列表  -->
+<div class="my_empty">
+    <div class="empty_bd  my_course_empty">
+        <h3>没有找到任何课程~</h3>
+        <p><a href="">到首页去看看</a></p>
+    </div>
+</div>
+<!-- 订单列表  -->
+<div id="loading_div" class="loading_div"><div class="loading_bd">没有了，已经到底啦</div></div>
+<footer>
+    <a href="">阅读app</a>
+</footer>
+
+<div id="loading" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 999999999; display: none;"><div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></div>
+
+<script type="text/javascript">
+	function GetQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+		var r = window.location.search.substr(1).match(reg);
+		if(r != null) return unescape(r[2]);
+		return null;
+	}
+
+	var status = GetQueryString('status');
+	var is_verify = GetQueryString('is_verify');
+	var ajaxUrl = "./index.php?i=2&c=entry&op=ajaxgetlist&do=mylesson&m=fy_lessonv2";
+	var attachUrl = "http://shop.itischinese.com/attachment/";
+	var payUrl = "./index.php?i=2&c=entry&do=pay&m=fy_lessonv2";
+	var cancleUrl = "./index.php?i=2&c=entry&op=cancle&do=mylesson&m=fy_lessonv2";
+	var eUrl = "./index.php?i=2&c=entry&do=evaluate&m=fy_lessonv2";
+	var orderUrl = "./index.php?i=2&c=entry&do=orderdetail&m=fy_lessonv2";
+	var loading = document.getElementById("loading");
+	$(function() {
+		var nowPage = 1; //设置当前页数，全局变量
+		function getData(page) {
+			nowPage++; //页码自动增加，保证下次调用时为新的一页。
+			$.get(ajaxUrl, {
+				page: page,
+				status: status,
+				is_verify: is_verify,
+			}, function(data) {
+				if(data.length > 0) {
+					loading.style.display = 'none';
+					var jsonObj = JSON.parse(data);
+					insertDiv(jsonObj);
+				}
+			});
+
+		}
+		//初始化加载第一页数据
+		getData(1);
+
+		//生成数据html,append到div中
+		function insertDiv(result) {
+			var mainDiv = $("#order-list");
+			var chtml = '';
+			for(var j = 0; j < result.length; j++) {
+				chtml += '<div class="submit_list" onclick="goLesson('+ result[j].id +')">';
+				chtml += '	<div class="item">';
+				chtml += '		<img src="' + attachUrl+result[j].images + '" alt="' + result[j].bookname + '">';
+				chtml += '		<span class="bookname">' + result[j].bookname + '</span>';
+				chtml += '		<div class="info">';
+				chtml += '			<p>订单编号：' + result[j].ordersn + '</p>';
+				chtml += '			<p>订单状态：<i class="red-color">' + result[j].statusname + '</i></p>';
+				chtml += '			<p>下单时间：' + result[j].addtime + '</p>';
+				if(result[j].lesson_type==1){
+					chtml += '			<p>已选：'+result[j].spec_name+'</p>';
+					if(result[j].is_verify==1){
+					chtml += '			<p>核销状态：<i class="red-color">已核销</i></p>';
+					}else{
+					chtml += '			<p>核销状态：<i class="green-color">未核销</i></p>';
+					}
+				}else{
+					if(result[j].spec_day>0){
+						chtml += '			<p>规格：'+result[j].spec_day+'天</p>';
+					}else{
+						chtml += '			<p>规格：长期有效</p>';
+					}
+					if(result[j].validity!=0 && result[j].status>0){
+						chtml += '	<p>有效期：<i class="red-color">'+result[j].validity+'</i></p>';
+					}
+				}
+
+				chtml += '		</div>';
+				chtml += '	</div>';
+				chtml += '	<div class="sum">';
+				chtml += '		订单总额：<em>￥'+result[j].price+'</em>';
+				chtml += '		<span class="fr">';
+				if(result[j].status>0 && result[j].lesson_type==1 && result[j].is_verify==0){
+					chtml += '		<a href="'+orderUrl+'&orderid='+result[j].id+'" class="mylesson-btn verify-btn">核销二维码</a>';
+				}
+				if(result[j].status=='0'){
+					chtml += '		<a href="'+cancleUrl+'&orderid='+result[j].id+'" class="mylesson-btn cancle-btn" onclick="changeOrder()">取消订单</a>';
+					chtml += '		<a href="'+payUrl+'&orderid='+result[j].id+'" class="mylesson-btn pay-btn" onclick="changeOrder()">立即支付</a>';
+				}else if(result[j].status=='1'){
+					chtml += '		<a href="'+eUrl+'&orderid='+result[j].id+'" class="mylesson-btn evaluate-btn">评价课程</a>';
+				}else if(result[j].status=='-1'){
+					chtml += '		<a href="'+cancleUrl+'&orderid='+result[j].id+'&is_delete=1" class="mylesson-btn cancle-btn" onclick="changeOrder()">删除订单</a>';
+				}
+				chtml += '		</span>';
+				chtml += '	</div>';
+				chtml += '</div>';
+
+			}
+			mainDiv.append(chtml);
+			if(result.length == 0) {
+				document.getElementById("loading_div").innerHTML='<div class="loading_bd">没有了，已经到底啦</div>';
+			}
+		}
+
+		//==============核心代码=============
+		var winH = $(window).height(); //页面可视区域高度
+
+		var scrollHandler = function() {
+			var pageH = $(document.body).height();
+			var scrollT = $(window).scrollTop(); //滚动条top
+			var aa = (pageH - winH - scrollT) / winH;
+			if(aa < 0.02) {
+				if(nowPage % 1 === 0) {
+					getData(nowPage);
+					$(window).unbind('scroll');
+					$("#btn_Page").show();
+				} else {
+					getData(nowPage);
+					$("#btn_Page").hide();
+				}
+			}
+		}
+		//定义鼠标滚动事件
+		$(window).scroll(scrollHandler);
+		//继续加载按钮事件
+		$("#btn_Page").click(function() {
+			loading.style.display = 'block';
+			getData(nowPage);
+			$(window).scroll(scrollHandler);
+		});
+	});
+
+	function goLesson(id){
+		var url = orderUrl + "&orderid="+id;
+		location.href = url;
+	}
+
+	function changeOrder(){
+		document.getElementById("loading").style.display = 'block';
+	}
+
+</script>
+
+		<!-- 底部导航 -->
+		<!-- <div class="weui_tabbar ">
+
+			<a href="./index.html" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-home menu_on" style="font-size: 24px;"></i>
+				</div>
+				<p class="weui_tabbar_label">首 页</p>
+			</a>
+
+			<a href="./search.html" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-video-camera"></i>
+				</div>
+				<p class="weui_tabbar_label">全部课程</p>
+			</a>
+
+
+			<a href="./mylesson.html" class="weui_tabbar_item weui_bar_item_on">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-book"></i>
+				</div>
+				<p class="weui_tabbar_label">我的课程</p>
+			</a>
+
+			<a href="./self.html" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-user"></i>
+				</div>
+				<p class="weui_tabbar_label">个人中心</p>
+			</a>
+		</div> -->
+		<!-- /底部导航 -->
+	</div>
+</div>
+
+<script>
+	//动画效果
+	var mySwiper = new Swiper('.swiper-container', {
+		pagination: '.swiper-pagination',
+		/*分页器焦点*/
+		effect: 'coverflow',
+		/*动画过渡效果*/
+		paginationClickable: true,
+		/*添加点击效果*/
+		centeredSlides: true,
+		/*活动内容居中*/
+		autoplay: 5000,
+		/*自动滑动时间*/
+		autoplayDisableOnInteraction: false,
+		/*用户操作动画，3s后可以继续执行动画*/
+		preloadImages: false,
+		lazyLoading: true
+	});
+	//   分类为两个时的样式
+	var $gridNum = $('.grid_wrap .grid_item')
+	if($gridNum.length == 2) {
+		$gridNum.first().css('border-right', '1px solid #f1f1f5')
+	}
+	//课程为奇数时图片平铺
+	$('.course_main').each(function() {
+		var $item = $(this).find(' .course_item');
+		var itemNum = $item.length % 2;
+		if(itemNum == 1 && $(this).hasClass('course_live')) {
+			var $firstitem = $item.first(),
+				$img = $firstitem.find("img");
+			$firstitem.css('width', "100%");
+			var wd = $firstitem.width() || window.innerWidth - 20;
+			var boxh = Math.ceil(wd / 2);
+			$img.wrap("<div class='big-box' style='height:" + boxh + "px'></div>");
+		} else if(itemNum == 1 && $(this).hasClass('course_other')) {
+			var $lastitem = $item.last(),
+				$img = $lastitem.find("img");
+			$lastitem.css('width', "100%");
+			var wd = $lastitem.width() || window.innerWidth - 20;
+			var boxh = Math.ceil(wd / 2);
+			$img.wrap("<div class='big-box' style='height:" + boxh + "px'></div>");
+		}
+	});
+</script>
+<div style="display:none;">
+	</div>
+<script>;</script><script type="text/javascript" src="./style/index.php"></script>
+</body></html>

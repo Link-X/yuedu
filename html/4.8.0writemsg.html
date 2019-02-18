@@ -1,0 +1,329 @@
+<html><head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="full-screen" content="yes">
+		<meta name="browsermode" content="application">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="x5-page-mode" content="app">
+		<title>
+							绑定手机号码 - 阅读app
+		</title>
+		<script src="../style/jquery.min.js"></script>
+		<script src="../style/swiper.3.1.7.min.js"></script>
+		<link rel="stylesheet" href="../style/weui.min.css">
+		<link rel="stylesheet" href="../style/font-awesome.min.css">
+		<link rel="stylesheet" href="../style/index.css">
+
+<script src="../style/jweixin-1.3.2.js"></script>
+<script type="text/javascript">
+	window.sysinfo = window.sysinfo || {"uniacid":2,"acid":"2","siteroot":"http:\/\/shop.itischinese.com\/","siteurl":"http:\/\/shop.itischinese.com\/app\/index.php?i=2&c=entry&op=modifyMobile&do=writemsg&m=fy_lessonv2","attachurl":"http:\/\/shop.itischinese.com\/attachment\/","cookie":{"pre":"6114_"},"openid":"om1HxvvE-OW8NE4ZaVUpQn-MGqWI","MODULE_URL":"http:\/\/shop.itischinese.com\/addons\/fy_lessonv2\/"} || {};
+
+	// jssdk config 对象
+	jssdkconfig = {"appId":"wx4a922ba228b745ac","nonceStr":"e919KN29vrC9YK32","timestamp":"1547998965","signature":"65a78fdcd4f61cc299e81c96919373f577a786bc"} || {};
+
+	// 是否启用调试
+	jssdkconfig.debug = false;
+
+	jssdkconfig.jsApiList = [
+		'checkJsApi',
+		'onMenuShareTimeline',
+		'onMenuShareAppMessage',
+		'onMenuShareQQ',
+		'onMenuShareWeibo',
+		'hideMenuItems',
+		'showMenuItems',
+		'hideAllNonBaseMenuItem',
+		'showAllNonBaseMenuItem',
+		'translateVoice',
+		'startRecord',
+		'stopRecord',
+		'onRecordEnd',
+		'playVoice',
+		'pauseVoice',
+		'stopVoice',
+		'uploadVoice',
+		'downloadVoice',
+		'chooseImage',
+		'previewImage',
+		'uploadImage',
+		'downloadImage',
+		'getNetworkType',
+		'openLocation',
+		'getLocation',
+		'hideOptionMenu',
+		'showOptionMenu',
+		'closeWindow',
+		'scanQRCode',
+		'chooseWXPay',
+		'openProductSpecificView',
+		'addCard',
+		'chooseCard',
+		'openCard'
+	];
+
+	wx.config(jssdkconfig);
+
+</script>		<script type="text/javascript">
+		wx.ready(function(){
+			var shareData = {
+				title: "绑定手机号码",
+				desc: "",
+				link: "http://shop.itischinese.com/app/index.php?i=2&c=entry&op=modifyMobile&do=writemsg&m=fy_lessonv2&uid=3",
+				imgUrl: "http://shop.itischinese.com/attachment/",
+				trigger: function (res) {},
+				complete: function (res) {},
+				success: function (res) {},
+				cancel: function (res) {},
+				fail: function (res) {}
+			};
+			wx.onMenuShareTimeline(shareData);
+			wx.onMenuShareAppMessage(shareData);
+			wx.onMenuShareQQ(shareData);
+			wx.onMenuShareWeibo(shareData);
+			wx.onMenuShareQZone(shareData);
+		});
+		</script>
+	</head>
+	<body>
+		<div class="tabbar tabbar_wrap page_wrap">
+			<div class="weui_tab">
+<div class="header-2 cbox" id="header">
+	<a href="" class="ico go-back"></a>
+	<div class="flex title">绑定手机号码</div>
+</div>
+
+<div class="login_wrap">
+	<form method="post" onsubmit="return checknum();">
+		<div class="weui_cells weui_cells_form">
+						<div class="weui_cell">
+				<div class="weui_cell_hd"><label class="weui_label" for="registerform-mobile">新手机号码</label></div>
+				<div class="weui_cell_bd weui_cell_primary">
+					<input type="tel" class="weui_input" name="mobile" placeholder="不修改请留空">
+				</div>
+			</div>
+			<div class="weui_cell check_code">
+				<div class="weui_cell_hd">
+					<label class="weui_label">验证码</label>
+				</div>
+				<div class="weui_cell_bd weui_cell_primary">
+					<input type="tel" class="weui_input" name="verify_code" placeholder="请输入验证码">
+				</div>
+				<div class="weui_cell_ft">
+					<a href="javascript:;" id="weui_btn_send" onclick="sendcode()">获取验证码</a>
+				</div>
+			</div>
+						<div class="weui_cell">
+				<div class="weui_cell_hd"><label class="weui_label" for="registerform-mobile">重置密码</label></div>
+				<div class="weui_cell_bd weui_cell_primary">
+					<input type="password" class="weui_input" id="password" name="password" placeholder="不重置密码请留空">
+				</div>
+			</div>
+			<div class="weui_cell">
+				<div class="weui_cell_hd"><label class="weui_label" for="registerform-mobile">确认密码</label></div>
+				<div class="weui_cell_bd weui_cell_primary">
+					<input type="password" class="weui_input" name="password2" placeholder="请再次输入密码">
+				</div>
+			</div>
+					</div>
+		<div class="weui_btn_area">
+			<input type="hidden" name="token" value="tevk">
+			<input type="submit" name="submit" class="weui_btn weui_btn_primary" value="提交">
+		</div>
+	</form>
+</div>
+<footer>
+    <a href="">阅读app</a>
+</footer>
+<div id="spinners" style="display:none;"><div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></div>
+
+<script type="text/javascript">
+function checknum(){
+	var mobile   = $("input[name=mobile]").val();
+	if(mobile!=''){
+	var myreg = /^((1)+\d{10})$/;
+		if(mobile==''){
+			alert("请输入手机号码");
+			return false;
+		}else if(!myreg.test(mobile)) {
+			alert('您输入的手机号码有误');
+			return false;
+		}
+
+		if($("input[name=verify_code]").val()==''){
+			alert("请输入短信验证码");
+			return false;
+		}
+	}
+
+	var password = document.getElementById("password").value.length;
+	if($("input[name=password]").val()!='' && password<6){
+		alert("密码长度不能小于6位");
+		return false;
+	}
+	if($("input[name=password]").val()!='' && password>20){
+		alert("密码长度不能大于20位");
+		return false;
+	}
+	if($("input[name=password]").val()!='' && $("input[name=password]").val()!=$("input[name=password2]").val()){
+		alert("两次密码不一致");
+		return false;
+	}
+
+}
+
+var countdown = 60;
+function sendcode() {
+	var result = checkMobile();
+	if(!result){
+		return;
+	}
+	if ($('#weui_btn_send').hasClass('has_send')) {
+		return false;
+	}
+
+	var mobile = $('input[name="mobile"]').val();
+	$.ajax({
+		type:"post",
+		dataType:"json",
+		url: "./index.php?i=2&c=entry&do=sendcode&m=fy_lessonv2",
+		data: {mobile:mobile},
+		success: function (data) {
+			if(data.code==0){
+				settime($("#weui_btn_send"));
+			}
+			alert(data.msg);
+		},
+		error: function(e){
+		}
+	});
+
+}
+function settime(obj) { //发送验证码倒计时
+	if(countdown == 0) {
+		$('#weui_btn_send').removeClass('has_send').text('重新发送');
+		countdown = 60;
+		return;
+	} else {
+		$('#weui_btn_send').addClass('has_send').text('重新获取(' + countdown + ')');
+		countdown--;
+	}
+	setTimeout(function() {
+		settime(obj)
+	}, 1000)
+}
+//校验手机号是否合法
+function checkMobile() {
+	var mobile = $('input[name="mobile"]').val();
+	var myreg = /^((1)+\d{10})$/;
+	if(!myreg.test(mobile)) {
+		alert('请输入有效的手机号码');
+		return false;
+	} else {
+		return true;
+	}
+}
+</script>
+
+		<!-- 底部导航 -->
+		<!-- <div class="weui_tabbar ">
+
+			<a href="./index.html" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-home menu_on" style="font-size: 24px;"></i>
+				</div>
+				<p class="weui_tabbar_label">首 页</p>
+			</a>
+
+			<a href="./search.html" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-video-camera"></i>
+				</div>
+				<p class="weui_tabbar_label">全部课程</p>
+			</a>
+
+
+			<a href="./mylesson.html" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-book"></i>
+				</div>
+				<p class="weui_tabbar_label">我的课程</p>
+			</a>
+
+			<a href="./self.html" class="weui_tabbar_item ">
+				<div class="weui_tabbar_icon">
+					<i class="fa fa-user"></i>
+				</div>
+				<p class="weui_tabbar_label">个人中心</p>
+			</a>
+		</div> -->
+		<!-- /底部导航 -->
+	</div>
+</div>
+
+<script>
+	//动画效果
+	var mySwiper = new Swiper('.swiper-container', {
+		pagination: '.swiper-pagination',
+		/*分页器焦点*/
+		effect: 'coverflow',
+		/*动画过渡效果*/
+		paginationClickable: true,
+		/*添加点击效果*/
+		centeredSlides: true,
+		/*活动内容居中*/
+		autoplay: 5000,
+		/*自动滑动时间*/
+		autoplayDisableOnInteraction: false,
+		/*用户操作动画，3s后可以继续执行动画*/
+		preloadImages: false,
+		lazyLoading: true
+	});
+	//   分类为两个时的样式
+	var $gridNum = $('.grid_wrap .grid_item')
+	if($gridNum.length == 2) {
+		$gridNum.first().css('border-right', '1px solid #f1f1f5')
+	}
+	//课程为奇数时图片平铺
+	$('.course_main').each(function() {
+		var $item = $(this).find(' .course_item');
+		var itemNum = $item.length % 2;
+		if(itemNum == 1 && $(this).hasClass('course_live')) {
+			var $firstitem = $item.first(),
+				$img = $firstitem.find("img");
+			$firstitem.css('width', "100%");
+			var wd = $firstitem.width() || window.innerWidth - 20;
+			var boxh = Math.ceil(wd / 2);
+			$img.wrap("<div class='big-box' style='height:" + boxh + "px'></div>");
+		} else if(itemNum == 1 && $(this).hasClass('course_other')) {
+			var $lastitem = $item.last(),
+				$img = $lastitem.find("img");
+			$lastitem.css('width', "100%");
+			var wd = $lastitem.width() || window.innerWidth - 20;
+			var boxh = Math.ceil(wd / 2);
+			$img.wrap("<div class='big-box' style='height:" + boxh + "px'></div>");
+		}
+	});
+</script>
+<div style="display:none;">
+	</div>
+</body>
+<script type="text/javascript">
+  apiready = function() {
+    api.setStatusBarStyle({
+      style: 'light',
+      color: '#FBFBFC'
+    });
+    };
+  $(function(){
+      var h = $(window).height();
+      $("body").height(h);
+    })
+		$("#header a").on('click',function(){
+			api.closeWin({
+							name:'writemsg'
+						});
+		})
+</script>
+</html>
