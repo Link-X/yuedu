@@ -22,7 +22,7 @@
                 padding: 15px;
 
                  position: fixed;
-                top:3rem;
+                top:9rem;
                 width: 90%;
                 left:5%
             }
@@ -112,6 +112,33 @@
                   showToos('请输入密码')
                   return false;
               }
+              api.ajax({
+                  url: 'http://shop.itischinese.com/app/index.php?i=2&c=auth&a=login&do=basic',
+                  method: 'post',
+                  data: {
+                      values: {
+                          username: phone,
+                          password: pwd,
+                          mode: 'basic'
+                      }
+                  }
+              }, function(ret, err) {
+
+                  api.openWin({
+                    name: 'index',
+                    url: '../index.html'
+                  })
+                  if (ret) {
+                    api.openWin({
+                      name: 'index',
+                      url: '../index.html'
+                    })
+                  } else {
+                      api.alert({
+                          msg: JSON.stringify(err)
+                      });
+                  }
+              });
             })
             $('#go_reg').on('click', function() {
               api.openWin({

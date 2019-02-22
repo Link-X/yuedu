@@ -13,83 +13,13 @@
 	<link rel="stylesheet" href="../style/font-awesome.min.css">
 	<link rel="stylesheet" href="../style/index.css">
 
-	<!-- <script src="../style/jweixin-1.3.2.js"></script>
-<script type="text/javascript">
-	window.sysinfo = window.sysinfo || {"uniacid":2,"acid":"2","siteroot":"http:\/\/shop.itischinese.com\/","siteurl":"http:\/\/shop.itischinese.com\/app\/index.php?i=2&c=entry&do=search&m=fy_lessonv2&t=1547536310","attachurl":"http:\/\/shop.itischinese.com\/attachment\/","cookie":{"pre":"6114_"},"openid":"om1HxvvE-OW8NE4ZaVUpQn-MGqWI","MODULE_URL":"http:\/\/shop.itischinese.com\/addons\/fy_lessonv2\/"} || {};
-
-	// jssdk config 对象
-	jssdkconfig = {"appId":"wx4a922ba228b745ac","nonceStr":"oFsJ2xUuWWNMWU2Z","timestamp":"1547537549","signature":"51ec864fb53066f4c57aee0af87d2e08a2577b26"} || {};
-
-	// 是否启用调试
-	jssdkconfig.debug = false;
-
-	jssdkconfig.jsApiList = [
-		'checkJsApi',
-		'onMenuShareTimeline',
-		'onMenuShareAppMessage',
-		'onMenuShareQQ',
-		'onMenuShareWeibo',
-		'hideMenuItems',
-		'showMenuItems',
-		'hideAllNonBaseMenuItem',
-		'showAllNonBaseMenuItem',
-		'translateVoice',
-		'startRecord',
-		'stopRecord',
-		'onRecordEnd',
-		'playVoice',
-		'pauseVoice',
-		'stopVoice',
-		'uploadVoice',
-		'downloadVoice',
-		'chooseImage',
-		'previewImage',
-		'uploadImage',
-		'downloadImage',
-		'getNetworkType',
-		'openLocation',
-		'getLocation',
-		'hideOptionMenu',
-		'showOptionMenu',
-		'closeWindow',
-		'scanQRCode',
-		'chooseWXPay',
-		'openProductSpecificView',
-		'addCard',
-		'chooseCard',
-		'openCard'
-	];
-
-	wx.config(jssdkconfig);
-
-</script>		 -->
-	<!-- <script type="text/javascript">
-		wx.ready(function(){
-			var shareData = {
-				title: "全部分类",
-				desc: "",
-				link: "http://shop.itischinese.com/app/index.php?i=2&c=entry&do=search&m=fy_lessonv2&t=1547536310&uid=3",
-				imgUrl: "http://shop.itischinese.com/attachment/",
-				trigger: function (res) {},
-				complete: function (res) {},
-				success: function (res) {},
-				cancel: function (res) {},
-				fail: function (res) {}
-			};
-			wx.onMenuShareTimeline(shareData);
-			wx.onMenuShareAppMessage(shareData);
-			wx.onMenuShareQQ(shareData);
-			wx.onMenuShareWeibo(shareData);
-			wx.onMenuShareQZone(shareData);
-		});
-		</script> -->
+	<link href="../style/search.css" rel="stylesheet">
 </head>
 
 <body>
-	<div class="tabbar tabbar_wrap page_wrap">
+	<div class="tabbar tabbar_wrap page_wrap" id="vueBox">
 		<div class="weui_tab">
 
-			<link href="../style/search.css" rel="stylesheet">
 
 			<!-- 顶部搜索框 -->
 			<header class="m-header z-img-ready border-top">
@@ -136,15 +66,18 @@
 			<div class="section">
 				<div style="margin:90px auto 10px;">
 					<ul id="js-course-list" class="course-list list-view" style="min-height:1px;">
-						<li class="lesson_list">
+						<li class="lesson_list" v-for="item in listData">
 							<a href="" class="package" id="lesson">
 								<div class="package__cover-wrap">
-									<div class="package__cover" style="background-image: url(http://shop.itischinese.com/attachment/images/2/2018/12/azo41LDH7CChH7La6HAM7M1g1gl617.jpeg);"> <span class="package__cover-tips package__cover-tips--status">2人已学习</span> </div>
+									<div class="package__cover"
+									:style="{background: `${item.images}`}">
+									<span class="package__cover-tips package__cover-tips--status">{{item.buynum}}人已学习</span>
+								</div>
 								</div>
 								<div class="package__content">
-									<h3 class="package__name">阅读app课程</h3>
-									<div class="package__info"> <span class="u-price">免费</span> </div>
-									<div class="package__info"><span class="section-status-btn">已完结</span>
+									<h3 class="package__name">{{item.bookname}}</h3>
+									<div class="package__info"> <span class="u-price">{{item.price}}</span> </div>
+									<div class="package__info"><span class="section-status-btn">{{item.difficulty}}</span>
 										<div class="package__course-num"><i class="blue-color"></i></div><i class="blue-color">			</i></div><i class="blue-color">		</i></div><i class="blue-color">	</i></a>
 						</li>
 					</ul>
@@ -221,23 +154,56 @@
 	<div style="display:none;">
 	</div>
 </body>
+<script src="../script/vue.js"></script>
+
 <script type="text/javascript">
 	apiready = function() {
 		api.setStatusBarStyle({
 			style: 'light',
 			color: '#FBFBFC'
 		});
+
+		$(function() {
+			var h = $(window).height();
+			$("body").height(h);
+		})
+
+		var vm = new Vue({
+			el: '#vueBox',
+			data: function () {
+				return {
+					listData: [{
+						bookname: "无数据"
+					}]
+				}
+			},
+			created: function () {
+				this.getDate()
+			},
+			methods: {
+				getDate: function () {
+					var that = this
+					api.ajax({
+						url: 'http://shop.itischinese.com/app/index.php?i=2&c=entry&op=display&do=search2&m=fy_lessonv2',
+						method: 'get',
+						data: {}
+					}, function (ret, err) {
+						if (ret) {
+							that.listData = ret.list
+							console.log(JSON.stringify(that.listData))
+						}
+					})
+				},
+				goLesson: function () {
+					api.openWin({
+						name: '1.1lesson',
+						url: '1.1lesson.html'
+					});
+				}
+			}
+		})
 	};
-	$(function() {
-		var h = $(window).height();
-		$("body").height(h);
-	})
-	$("#lesson").on('click', function() {
-		api.openWin({
-			name: '1.1lesson',
-			url: '1.1lesson.html'
-		});
-	})
+
 </script>
 
 </html>

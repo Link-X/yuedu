@@ -9,7 +9,8 @@
 		</title>
 		<script src="../style/jquery.min.js"></script>
 		<script src="../style/swiper.3.1.7.min.js"></script>
-				<link rel="stylesheet" href="../style/weui.min.css">
+		<script src="../script/rem.js"></script>
+		<link rel="stylesheet" href="../style/weui.min.css">
 		<link rel="stylesheet" href="../style/font-awesome.min.css">
 		<link rel="stylesheet" href="../style/index.css">
     <link href="../style/new_self.css" rel="stylesheet">
@@ -17,12 +18,14 @@
       header{ background-color: #f2f2f2; }
       header ul li { height: 50px; line-height: 50px; text-align: center; display: none; color: #323237; position: relative;font-size: 18px;  }
       header ul li.active{ display: block; }
-      .classify_box {
+
+			.classify_box {
         position: absolute;
         display: flex;
         top: 47px;
         bottom: 0;
         width: 100%;
+				overflow-y: scroll;
       }
       .menu {
         width: 84px;
@@ -30,29 +33,135 @@
         height: inherit;
         overflow-y: auto;
         position: relative;
+
       }
+			.category-switch {
+				line-height: 0.45rem;
+				font-size: 16px;
+				text-align: center;
+				color: #000;
+				padding: 0rem 0.05rem;
+				height: 0.45rem;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+				position: relative;
+			}
+			.menu .on {
+				background: #fff;
+				position: relative;
+				color: #ff5555;
+				font-size: 14px;
+			}
+			.menu .on::before {
+				width: 0;
+				height: 100%;
+				content: " ";
+				position: absolute;
+				top: 0;
+				left: 0;
+				border-left: 3px solid #ff5555;
+				z-index: 2;
+			}
+			.container {
+				padding: 0.08rem;
+			-webkit-box-flex: 1;
+			-webkit-flex: 1;
+			-ms-flex: 1;
+			flex: 1;
+				height: inherit;
+				width: 100%;
+				background: #fff;
+				overflow-y: auto;
+				position: relative;
+			}
+			.container_ul {
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-flex-wrap: wrap;
+				flex-wrap: wrap;
+			}
+			.container_ul li{
+				width: 30%;
+				margin-right: .05rem;
+				padding: 0;
+				padding-top: .07rem;
+				text-align: center;
+			}
+			.container_ul li div {
+				height: 0.55rem;
+		    width: 100%;
+		    line-height: 0.55rem;
+		    text-align: center;
+			}
+			.container_ul li div img {
+				border-radius: 50%;
+			}
+			.container_ul li span {
+				display: inline-block;
+				font-size: 14px;
+				text-align: center;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				margin-top: 0.05rem;
+				color: #000;
+			}
     </style>
 	</head>
-	<body >
-    <header>
-        <ul>
-            <li class="border-b active" >全部分类</li>
-        </ul>
-    </header>
-    <div class="classify_box">
-      <div class="menu">
-        <ul>
-          <li>推荐分类</li>
-        </ul>
-      </div>
-      <div class="container">
-        <ul>
-          <li>全部课程</li>
-        </ul>
-      </div>
-    </div>
+	<body>
+		<div id="vueBox">
+			<header>
+					<ul>
+							<li class="border-b active" >全部分类</li>
+					</ul>
+			</header>
+			<div class="classify_box">
+				<div class="menu">
+					<ul>
+						<li class="category-switch"
+						:class="{'on': '001' === menuId}"
+						 @click="selecrLi('001')" id="001">推荐分类</li>
+						 <li class="category-switch"
+						 :class="{'on': item2.id === menuId}"
+						 v-for="item2 in classifyTitle"
+						 :key="item2.id"
+						 @click="selecrLi(item2.id)"
+						 >
+						 	{{item2.name}}
+						 </li>
+					</ul>
+				</div>
+				<div class="container" v-show="menuId === '001'">
+					<ul class="container_ul">
+						<li v-for="item in hot_category" :key="item.id">
+							<div>
+								<img
+								:src="item.ico"/>
+							</div>
+							<span>{{item.name}}</span>
+						</li>
+					</ul>
+				</div>
+				<div class="container" v-show="menuId !== '001'">
+					<ul class="container_ul" v-for="item3 in classifyData">
+						<li v-for="item3 in classifyData" :key="item3.id">
+							<div>
+								<img
+								:src="item3.ico"/>
+							</div>
+							<span>{{item3.name}}</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
   </body>
   <script type="text/javascript" src="../script/api.js"></script>
+	<script src="../script/vue.js"></script>
 <script type="text/javascript">
   apiready = function() {
       var h = $api.getStorage('main_h');
@@ -61,25 +170,57 @@
         style: 'light',
         color: '#FBFBFC'
       });
-      console.log(1)
-      getData()
+
+			var vm = new Vue({
+				el: '#vueBox',
+				data: {
+					menuId: '001',
+					classifyListData: [],
+					classifyData: [],
+					classifyTitle: [],
+					hot_category: []
+				},
+				created: function () {
+					this.getData()
+				},
+				methods: {
+					selecrLi: function(id) {
+						this.menuId = id
+						if (id !== '001') {
+							this.classifyData = []
+							this.classifyListData.forEach(v => {
+								if (v && v.child && v.child.constructor.name === 'Array') {
+									if (v.child[0].parentid === id) {
+										this.classifyData = v.child
+									}
+								}
+							})
+						}
+					},
+					getData: function () {
+						var that = this
+						api.ajax({
+							url: 'http://shop.itischinese.com/app/index.php?i=2&c=entry&op=allcategory&do=search2&m=fy_lessonv2',
+							method: 'get',
+							data: {}
+						}, function (ret, err) {
+							if (ret) {
+								that.hot_category = ret.hot_category
+								that.classifyListData = ret.categorylist
+								that.classifyTitle = ret.categorylist.map(v => {
+									return {
+										id: v.id,
+										name: v.name
+									}
+								})
+							}
+						})
+					}
+				}
+			})
+
     };
 
-    function getData() {
-      api.ajax({
-          url: 'http://shop.itischinese.com/app/index.php?i=2&c=entry&op=allcategory&do=search&m=fy_lessonv2',
-          method: 'get',
-          data: {
-              values: {}
-          }
-      }, function(ret, err) {
-        if (ret) {
-          console.log(JSON.stringify(ret))
-        } else {
-          console.log(JSON.stringify(err))
-        }
-      })
-    }
 
 </script>
 </html>
