@@ -80,23 +80,33 @@
         },function(ret,err){
         	center();
         });
-        var token = localStorage.getItem('token')
-        if (!token) {
-          api.confirm({
-            title: '提示',
-            buttons: ['确定', '取消'],
-            msg: '请登陆'
-          }, function(ret, err) {
-            api.openWin({
-                name: 'login',
-                url: './html/login.html',
-                pageParam: {
-                    name: 'login'
-                }
-            });
-          });
 
-        }
+        api.getPrefs({
+            key: 'token'
+        }, function (ret, err) {
+            if (err) {
+              console.log(JSON.stringify(err))
+              return
+            }
+            if(!ret.value) {
+              setTimeout(function () {
+                api.confirm({
+                  title: '提示',
+                  buttons: ['确定', '取消'],
+                  msg: '请登陆'
+                }, function(ret, err) {
+                  api.openWin({
+                      name: 'login',
+                      url: './html/login.html',
+                      pageParam: {
+                          name: 'login'
+                      }
+                  });
+                });
+              }, 5000)
+              return
+            }
+        });
     }
 
     function funIniGroup(){

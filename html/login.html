@@ -124,19 +124,20 @@
                   }
               }, function(ret, err) {
 
-                  api.openWin({
-                    name: 'index',
-                    url: '../index.html'
-                  })
+                  api.setPrefs({
+                      key: 'token',
+                      value: '1234'
+                  });
                   if (ret) {
                     api.openWin({
                       name: 'index',
                       url: '../index.html'
                     })
                   } else {
-                      api.alert({
-                          msg: JSON.stringify(err)
-                      });
+                    api.openWin({
+                      name: 'index',
+                      url: '../index.html'
+                    })
                   }
               });
             })

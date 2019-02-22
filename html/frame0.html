@@ -112,7 +112,7 @@
                                 <div class="package__content">
                                     <h3 class="package__name">{{item.bookname}}</h3>
                                     <div class="package__info">
-                                        <span class="pink-color subhead">阅读app第一章</span>
+                                        <span class="pink-color subhead">{{item.section.title}}</span>
                                     </div>
                                     <div class="package__info">
                                         <span class="grey-color">{{getDate(item.update_time)}} 更新</span>
@@ -219,9 +219,13 @@ apiready = function() {
             }
         });
       },
-      getDate: function (date) {
-        var dateNumber = Number(date)
-        return new Date(dateNumber).toLocaleDateString().replace(/\//g, "-")
+      getDate: function (num) {
+        var dateNumber = Number(num)
+        var date =  new Date(dateNumber);
+        var y = 1900+date.getYear();
+        var m = "0"+(date.getMonth()+1);
+        var d = "0"+date.getDate();
+        return y+"-"+m.substring(m.length-2,m.length)+"-"+d.substring(d.length-2,d.length);
       },
       getData: function () {
         var that = this
