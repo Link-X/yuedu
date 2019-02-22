@@ -66,8 +66,8 @@
 			<div class="section">
 				<div style="margin:90px auto 10px;">
 					<ul id="js-course-list" class="course-list list-view" style="min-height:1px;">
-						<li class="lesson_list" v-for="item in listData">
-							<a href="" class="package" id="lesson">
+						<li class="lesson_list" v-for="item in listData" :key="item.id" @click="goLesson">
+							<a href="javascript:void(0);" class="package" id="lesson">
 								<div class="package__cover-wrap">
 									<div class="package__cover"
 									:style="{background: `${item.images}`}">
@@ -78,7 +78,11 @@
 									<h3 class="package__name">{{item.bookname}}</h3>
 									<div class="package__info"> <span class="u-price">{{item.price}}</span> </div>
 									<div class="package__info"><span class="section-status-btn">{{item.difficulty}}</span>
-										<div class="package__course-num"><i class="blue-color"></i></div><i class="blue-color">			</i></div><i class="blue-color">		</i></div><i class="blue-color">	</i></a>
+										<div class="package__course-num"><i class="blue-color"></i></div><i class="blue-color">
+											</i></div><i class="blue-color">
+												</i></div><i class="blue-color">
+												</i>
+								</a>
 						</li>
 					</ul>
 					<div id="loading_div" class="loading_div">
@@ -195,10 +199,10 @@
 					})
 				},
 				goLesson: function () {
-					api.openWin({
-						name: '1.1lesson',
-						url: '1.1lesson.html'
-					});
+						api.openWin({
+							name: '1.1lesson',
+							url: '1.1lesson.html'
+						});
 				}
 			}
 		})

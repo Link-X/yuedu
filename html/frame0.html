@@ -100,8 +100,8 @@
                     <ul class="newlesson-list"
                         v-for="item in datas.newlesson"
                         style="min-height:1px;">
-                        <li class="lesson_list">
-                            <a href="" class="package" id="lesson">
+                        <li class="lesson_list" @click="goLesson">
+                            <a href="javascript:void(0);" class="package" id="lesson">
                                 <div class="package__cover-wrap">
                                     <div class="package__cover"
                                         :style="{background: `url(${item.images})`}"
@@ -201,6 +201,15 @@ apiready = function() {
       this.getData()
     },
     methods: {
+      goLesson: function () {
+        api.openWin({
+            name: '1lesson',
+            url: '1.1lesson.html',
+            pageParam: {
+                name: 'classify'
+            }
+        });
+      },
       goClassify: function () {
         api.openWin({
             name: 'classify',
